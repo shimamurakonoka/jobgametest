@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>登録内容確認</title>
+</head>
+<body class="user">
+    <div class="c_whitebox" style="text-align: center">
+    
+    <form action="{{ url_for('u_register') }}" method="post">
+        <h1>登録内容確認</h1>
+
+        <p>id(ユーザー名) : {{ id }} </p>
+        <p>pw : {{ pw }} </p>
+        <!-- u_register_キャラ１or２.png の挿入-->
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="hidden" name="pw" value="{{pw}}">
+
+        <h3>上記の内容で間違いありませんか？</h3>
+
+        <input type="submit" class="pa2" value="登録">
+    </form>
+    </div>
+        <a class="pa" a href="{{ url_for('u_register_page') }}" >戻る</a>
+
+        <style>
+            h1{ text-align: center; margin-bottom: 50px; margin-top: 5%;}
+            p{ text-align: left; margin-bottom: 20px;}
+            .Bred{ margin-left: 85%;}
+            .Bbule{ margin-right: 85%;}
+        </style>
+
+</body>
+</html>
+
+

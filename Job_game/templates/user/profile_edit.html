@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>プロフィール編集</title>
+</head>
+<body class="user">
+<div class="c_whitebox" style="text-align: center">
+    <!-- ここから -->
+    <h1>MY profile</h1>
+
+    <!-- {% if e == "2" %}
+    <p style="color: red; text-align: center">送信失敗しました。もう一度入力し直してください</p>
+    {% endif %} -->
+
+    <form action="{{ url_for('profile_edit_con') }}" method="post">
+        
+        <input type="hidden" name="id" value="{{ result[0]["id"] }}">
+
+        <p>ID: {{ result[0]["id"] }} </p>
+        <p>パスワード: ●●●●●●● </p>
+
+        <p style="text-align: center">
+            編集後の内容を入力してください。<br>
+            ※パスワードの編集のみ行えます。
+        </p>
+        
+        <input type="password" class="textbox_ulog" name="pw" placeholder="パスワード">
+
+        <input type="submit" class="Bred" value="確認">
+
+    <!-- ここまで -->
+    </form>
+    <a class="Bbule" href="{{ url_for('myprofile') }}">戻る</a>
+
+    <style>
+        h1{ text-align: center; margin-bottom: 50px; margin-top: 5%;}
+        .textbox_ulog{margin: auto; }
+        p{ text-align: left; margin-bottom: 20px;}
+        .Bred{ margin-left: 85%;} 
+        .Bbule{ margin-right: 85%;}
+    </style>
+</div>
+</body>
+</html>

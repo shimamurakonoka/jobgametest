@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>アカウント削除</title>
+    </head>
+    
+<body class="ad">
+    <!-- ここから -->
+    <div class="c_whitebox" style="text-align: center">
+    <form action="{{ url_for('ad_user_del') }}" method="post">
+    <h1>アカウント削除</h1>
+
+    <p>コチラのアカウントを削除します。<br>
+    よろしいですか？</p>
+
+    <table border="1" class="ta2">
+        <tr style="color: white; background: gray;">
+            <th>ID</th>
+            <th>パスワード</th>
+        </tr>
+        <tr style="color: gray; background: white;">
+            <th>一人分IDいれて</th>
+            <th>一人分パスワードいれて</th>
+        </tr>
+    </table>
+    <input class="nana" type="submit" value="削除">
+    </form>
+
+    <input type="button" class="na" onclick="history.back();" value="戻る">
+    </div>
+    <!-- ここまで -->
+
+    <style>
+        h1{ text-align: center; margin-bottom: 50px; margin-top: 5%;}
+        p{ text-align: center; margin-bottom: 20px;}
+        .Bred{ margin-left: 85%;}
+        .Bbule{ margin-right: 85%;}
+    </style>
+</body>
+</html>

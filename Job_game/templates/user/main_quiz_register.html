@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>問題作成</title>
+    </head>
+<body class="ad">
+    <!-- ここから -->
+    <div class="c_whitebox">
+    <action="{{ url_for('reg_quiz') }}" method="post" enctype="multipart/form-data">
+    <h1 class="tam">問題作成</h1>
+
+    <!-- 右側にスクロールバー -->
+
+    <p class="genre">ジャンル
+    <select name="genre">
+        <option value="SPI">SPI</option>
+        <option value="一般常識">一般常識</option>
+        <option value="その他">その他</option>
+    </select></p>
+
+    <div class="quiz"><input type="file" name="quiz_image" placeholder="問題内容を入力してください。" ></div>
+    
+    <p class="level-ed">難易度<br>
+        <a class="k">
+        1:<input type="radio" name="level" value="1">
+        2:<input type="radio" name="level" value="2">
+        3:<input type="radio" name="level" value="3">
+        </a>
+    </p>
+
+    <p class="right-ed">正解<br>
+        <a class="f">
+        1:<input type="radio" name="right" value="1">
+        2:<input type="radio" name="right" value="2">
+        3:<input type="radio" name="right" value="3">
+        4:<input type="radio" name="right" value="4">
+        </a>
+    </p>
+    
+    <p class="importance-ed">重要度<br></p>
+        <a class="c">
+        ★:<input type="radio" name="importance" value="1">
+        ★★:<input type="radio" name="importance" value="2">
+        ★★★:<input type="radio" name="importance" value="3">
+        </a>
+
+    <!-- ここから -->
+    <p class="commentary-ed">解説(任意)<br>
+        <input type="file" name="quiz_image2" >
+    </p>
+    <!-- ここまで -->
+    
+    <p class="attention-qued">※記入漏れがないことを確認してください。</p> <!-- 赤字 -->
+
+    <input type="submit" class="n1" value="登録">
+    <input type="button" class="na" onclick="history.back();" value="戻る">
+    </form>
+
+    </div>
+    <!-- ここまで -->
+</body>
+</html>

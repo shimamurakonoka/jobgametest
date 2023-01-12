@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>ユーザーログイン</title>
+</head>
+
+<body class="userlogin">
+    <!-- ここから -->
+    <div style="text-align: center" class="r_whitebox">
+        <br><br>
+    <form action="{{ url_for('u_log') }}" method="post">
+        
+    <h1>ログイン</h1>
+                
+    {% if error != "" %}
+    <p class="log_error">{{ error }}</p>
+    {% endif %}
+        
+    {% if error != "" %}
+    <p class="log_error2">{{ error2 }}</p>
+    {% endif %}
+    
+
+    <p>アカウント情報を入力してください。</p>
+    <input type="text" class="textbox_ulog" name="id" required required placeholder="ID"><br>
+    <input type="password" class="textbox_ulog" name="pw" required required placeholder="password"><br>
+    <div><input class="Bred" type="submit" style="margin-bottom: 20px;" value="ログイン"></div>
+        
+    </form>
+    
+    <a href="{{ url_for('u_register_page') }}" method="post" class="Bbule_ulog">新規登録</a>
+    
+    </form>
+    </div> 
+    <div>
+        <!-- イラストの下に -->
+    <a href="{{ url_for('job_guidance') }}" class="tiikawa">何から始めよう...?</a>
+        </div> 
+        <!-- ここまで --> 
+    <div>
+    <a href="{{ url_for('ad_log_page') }}" class="rinngo">管理者ログイン</a>
+    </div>
+    
+    </body>
+    
+    </html>
+    

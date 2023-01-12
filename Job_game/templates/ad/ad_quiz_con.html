@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>問題作成確認</title>
+    </head>
+    
+<body class="ad">
+    <!-- ここから -->
+    <div class="c_whitebox">
+    <form action="{{ url_for('') }}" method="post">
+    <h1>問題作成確認</h1>
+    <!-- 右側にスクロールバー -->
+    <p class="genreopen">ジャンル表示<br>
+        <input type="text" name="genreopen" placeholder="問題内容表示">
+        <!-- スクロールバーをテキストボックスをつける -->
+    </p>
+
+    <p class="level-dele"><br>
+    </p>
+
+    <p class="importance-dele"><br>
+    </p>
+
+    <p class="rightnm-dele"><br>
+    </p>
+
+    <input type="text" name="commentary-dele" placeholder="解説表示">
+    <!-- テキストボックス内にスクロールバーをつける -->
+
+    <div class="Bred"><input type="submit" value="削除"></div>
+
+    </form>
+
+    <a class="Bbule" href="{{ url_for('ad_quiz_register_page') }}" method="post">戻る</a>
+    </div>
+    <!-- ここまで -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="../../static/css/style.css">
+   <title>コメント掲示板削除依頼</title>
+ </head>
+ <body class="user">
+  <h1>削除依頼</h1>
+  {% for res in comments %}
+    <form action="{{url_for('u_board_comdelete_b')}}" method="post">
+      <input type="hidden" name="comment_id" value="{{ comment_id }}">
+      <p><nobr>{{ res.comment_id }}</nobr></p>   <p>投稿日:{{ res.date }}</p>
+      <p>内容:{{ res.comment }}</p>
+      <p>理由<input type="text" name="reason"></p><br>
+    <input type="submit" value="送信">
+  {% endfor %}
+    </form>
+
+    <a class="Bbule" href="{{ url_for('thread_page') }}">戻る</a>
+
+ </body>
+ </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>就職対策</title>
+    </head>
+<body class="user">
+    <div class="c_whitebox">
+    <h1>みんなのらくらく就活RPG</h1>
+    <br><br>
+    <a href="{{ url_for('main_map') }}" class="inbooox">筆記試験対策</a><br><br><br>
+    
+    <form action="{{ url_for('ministart') }}" method="get">
+        <input type="submit" class="inbooox" value="ミニゲーム">
+    </form><br><br><br>
+ 
+
+    <form action="{{ url_for('ranking') }}" method="post">
+        <input type="submit" class="inbooox" value="ランキング">
+    </form><br><br><br>
+    <a class="na" a href="{{ url_for('gametop') }}">戻る</a>
+</div>
+
+    <style>
+        h1{ text-align: center;}
+    </style>
+
+</body>
+</html>

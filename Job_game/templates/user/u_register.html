@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>新規登録</title>
+</head>
+<body class="user"></body>
+    
+    {% if error != "" %}
+    <p class="reg_error">{{ error }}</p>
+    {% endif %}
+    <!-- ここから -->
+    <form action="{{ url_for('u_register_con') }}" method="post">
+
+        <div class="c_whitebox">
+
+        <h1>新規登録</h1>
+        
+        <p>アカウント情報を入力してください。</p>
+        <input type="text" class="textbox_ureg" name="id" required placeholder="ID"><br><br>
+        <input type="password" class="textbox_ureg" name="pw" required placeholder="password"><br>
+          
+        <div><input type="submit" class="nana" value="確認" white-space: nowrap; ></div>
+        
+
+    </form>
+
+    <a class="na" a href="{{ url_for('u_log_page') }}">戻る</a>
+</div>
+    <!-- ここまで -->
+    
+    <style>
+        h1{ text-align: center; margin-bottom: 50px; margin-top: 5%;}
+        p{ text-align: center; margin-bottom: 20px;}
+        .Bred{ margin-left: 85%;}
+        .Bbule{ margin-right: 85%;}
+        
+    </style>
+
+</body>
+</html>
+
+

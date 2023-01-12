@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="../../static/css/style.css">
+   <title>掲示板</title>
+ </head>
+ <body class="user">
+   <h1>掲示板</h1>
+   <p class="red">※警告※人が不快になる書き込みはしないようにしよう！</p>
+   {% if ok != "" %}
+   <p style="color: rgb(43, 0, 255);">{{ok}}</p>
+   {% endif %}
+   <h2>スレッド一覧</h2>
+    {% for res in thread %}
+      <p>{{ res.thread_id }}</p>
+      <p>{{ res.thread_name }}</p>
+      <p>{{ res.user_id }}</p>
+      <form action="{{url_for('board_page')}}" method="post">
+        <input type="submit" value="このスレッドを見る">
+        <input type="hidden" name="thread_id" value="{{ res.thread_id }}">
+      </form>
+      <form action="{{url_for('u_board_thrdelete_page')}}" method="post">
+        <input type="hidden" name="thread_id" value="{{ res.thread_id }}">
+        <input type="submit" value="削除依頼">
+      </form>
+    </form>
+    </form>
+    {% endfor %}
+    <p>スレッドを立てる</p>
+    <form action="{{ url_for('thread') }}" method="get">
+      <p>スレッド名<input type="text" name="thread_name"></p>
+      <input type="submit" value="作成">
+    </form>
+
+    <a class="Bbule" href="{{ url_for('gametop') }}">戻る</a>
+
+    <style>
+      .red{ color: red;}
+    </style>
+
+ </body>
+ </html>

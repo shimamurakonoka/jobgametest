@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../static/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <title>チュートリアル</title>
+</head>
+<body class="stage">
+    <div id="display">
+        <p id = "name"></p>
+        <p id = "message"></p>       
+    </div>
+    <a href="{{ url_for('gametop') }}" class="Byellow">就活をはじめる！</a>
+    <script>
+        $(function () {
+            const messages = [
+                {name:"ウサギ",message:"はじめまして！　ぼくはウサギ。"},
+                {name:"あなた",message:"はじめまして。"},
+                {name:"ウサギ",message:"あなたの就職活動のお手伝いをするよ！"},
+                {name:"あなた",message:"よろしくお願いします！"},
+                {name:"ウサギ",message:"早速問題を解いてみよう！"},
+                {name:"あなた",message:"はーい"},
+            ]
+            let count = 0;     //何番目のメッセージを表示するかのカウント用の変数
+            let finished = true //動作中かどうかを管理するフラグ
+            //メッセージウィンドウがクリックされた時
+            $('#display').on('click', function () {
+                //メッセージの最後が表示されていたら無効化
+                if (messages.length > count) { 
+                    if (finished) {
+                        finished = false
+                        $('#name').text(messages[count].name)
+                        $('#message').text('')
+                        let messagesplit = messages[count].message.split('')
+                        console.log(messagesplit)
+                        let i = 0;
+                        let Intervalobj = setInterval(() => {
+                            if (messagesplit[i] == undefined) {
+                                clearInterval(Intervalobj)
+                                finished = true
+                                return false
+                            }
+                            $('#message').append(messagesplit[i])
+                            i++
+                        }, 50)
+                        count++
+                        
+                    }
+                }
+            })
+
+        })
+        
+
+    </script>
+</body>
+</html>

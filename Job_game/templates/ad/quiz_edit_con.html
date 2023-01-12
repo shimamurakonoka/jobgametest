@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>問題編集</title>
+    </head>
+    
+<body class="ad">
+    <!-- ここから -->
+    <div class="c_whitebox">
+    <form action="{{ url_for('') }}" method="post">
+    <h1>問題編集</h1>
+
+    <!-- 右側にスクロールバー -->
+
+    <p class="genre">ジャンル
+    <select name="ジャンル">
+        <option value="SPI">SPI</option>
+        <option value="一般常識">一般常識</option>
+        <option value="その他">その他</option>
+    </select></p>
+
+    <input type="text" name="textbox" placeholder="問題内容を入力してください。" >
+
+    <p class="level-ed">難易度を選択してください。<br>
+        1:<input type="radio" name="level1" value="1">
+        2:<input type="radio" name="level2" value="2">
+        3:<input type="radio" name="level3" value="3">
+    </p>
+
+    <p class="right-ed">正解を選択してください。<br>
+        1:<input type="radio" name="right1" value="1">
+        2:<input type="radio" name="right2" value="2">
+        3:<input type="radio" name="right3" value="3">
+        4:<input type="radio" name="right4" value="4">
+    </p>
+
+    <p class="importance-ed">重要度を選択してください。<br>
+        ★:<input type="radio" name="importance1" value="★">
+        ★★:<input type="radio" name="importance2" value="★★">
+        ★★★:<input type="radio" name="importance3" value="★★★">
+    </p>
+
+    <!-- ここから -->
+    <p class="commentary-ed">解説(任意)<br>
+        <input type="text" name="textbox2" >
+    </p>
+    <!-- ここまで -->
+
+    <p class="attention-qued">※記入漏れがないことを確認してください。</p> <!-- 赤字 -->
+
+    <div class="Bred"><input type="submit" value="編集"></div>
+    </form>
+
+    <a class="Bbule" href="{{ url_for('quiz_managment_page') }}" method="post">戻る</a>
+
+    </div>
+    <!-- ここまで -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>アカウント管理</title>
+</head>
+<body class="ad">
+    <!-- ここから -->
+    <div class="c_whitebox"  style="text-align: center">
+    <h1>アカウント管理</h1>
+    <form action="{{url_for("user_management_kensaku_page")}}" method="post"> <!-- url直して -->
+        <input type="text" class="textbox_adlog" name="id" placeholder="ID">
+        <button class="Bred" type="submit">検索</button>
+    </form>
+    <br>
+    <table border="1" class="ta">
+        <tr style="color: white; background: gray;">
+        <th>ID</th><th>パスワード</th><th></th><th></th>
+        </tr>
+        {% for res in result %}
+        <tr style="color: gray; background: white;">
+            <th>{{res.id}}</th><th>{{res.pw}}</th>
+            <th>
+            <form action ="{{url_for("ad_acc_edit_con_page")}}" method="post"><button type="submit" class="Bred" value="{{ res.id }}" name="id">編集</button></form>
+            </th>
+            <th>
+            <form action ="{{url_for("ad_user_del")}}" method="post"><button type="submit" class="Bbule" value="{{ res.id }}" name="id">削除</button></form></th>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <input type="button" class="na" onclick="history.back();" value="戻る">
+</div>
+
+<style>
+    h1{ text-align: center; margin-bottom: 50px; margin-top: 5%;}
+    p{ text-align: center; margin-bottom: 20px;}
+    .Bbule{ margin-right: 85%;}
+</style>
+
+<!-- ここまで -->
+</body>
+</html>

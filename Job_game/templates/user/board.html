@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="../../static/css/style.css">
+   <title>掲示板</title>
+ </head>
+ <body class="user">
+   <h1>掲示板</h1>
+   <h3>{{ thread_name }}</h3>
+   <h4>{{ user_id }}</h4>
+   <p class="red">※警告※人が不快になる書き込みはしないようにしよう！<br>
+                    削除依頼でコメントを削除できます</p>
+   <h2>コメント欄</h2>
+    {% for res in comments %}
+    <form action="{{url_for('u_board_comdelete_page')}}" method="post">
+      <input type="hidden" name="comment_id" value="{{ res.comment_id }}">
+      <p>{{ res.user_id }}</p>
+      <p>{{ res.comment }}</p>
+      <p>投稿日：{{ res.date }}</p>
+      <input type="submit" value="削除依頼">
+    </form>
+    {% endfor %}
+    <form action="{{ url_for('board') }}" method="get">
+      <input type="hidden" name="thread_id" value="{{ thread_id }}">
+      <p>コメント<input type="text" size="50" name="comment"></p><br>
+      <input type=submit value=投稿>
+    </form>
+
+    <a class="Bbule" href="{{ url_for('thread_page') }}">戻る</a>
+
+    <style>
+      .red{ color: red;}
+    </style>
+
+ </body>
+ </html>

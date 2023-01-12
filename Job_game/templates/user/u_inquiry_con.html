@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  <title>お問い合わせ内容確認画面</title>
+</head>
+<body>
+    <!-- ここから　-->
+    <h1>お問い合わせ内容　確認</h1>
+    <p>このお問い合わせを送信してもよろしいですか？</p><br>
+    <form action="{{url_for("u_inquiry_mail")}}" method="post">
+    <input type="hidden" name="mail" value="{{mail}}">
+    <input type="hidden" name="u_inquiry_r" value="{{u_inquiry_r}}">
+    <input type="hidden" name="u_inquiry" value="{{u_inquiry}}">
+    <p>Mail:{{ mail }}</p><br>
+    <p>要件:{{ u_inquiry }}</p><br>
+    <p>内容:{{ u_inquiry_r }}</p><br>
+    <input type="button" onclick="history.back();" value="戻る">
+    <input type="submit" value="送信" >
+    </form>
+    <!-- ここまで　-->
+
+  </body>
+</html>

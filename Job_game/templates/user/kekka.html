@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  <title>送信成功！</title>
+</head>
+<body>
+    <p>メールが送信されました。</p><br>
+    <p>迷惑メールに入ってないかメール設定をご確認ください。</p>
+    <p>メールが届かない場合は<a href = "{{ url_for('mail_page') }}">メール送信フォーム</a>に戻ります</p>
+</body>
+</html>

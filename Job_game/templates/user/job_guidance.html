@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>～就職活動案内～</title>
+    </head>
+    
+<body class="user">
+    <!-- ここから -->
+    <div style="text-align: center" class="c_whitebox_ng" >
+    <h1>就職<span class="ak">勝</span>つ動の進め方</h1> <!-- 勝　だけ赤文字 -->
+    <!-- 右側スクロールバー -->
+
+  
+    
+    <a href="{{ url_for('job_guidance_s_1') }}"  class="te">自己理解<a class="ya1">&rarr;</a></a>
+    <a href="{{ url_for('job_guidance_s_2') }}"  class="te">業界研究<a class="ya2">&rarr;</a>
+    <a href="{{ url_for('job_guidance_s_3') }}"  class="te">インターンシップ<a class="ya3">&rarr;</a>
+<br>
+    <a href="{{ url_for('job_guidance_s_4') }}"  class="te">企業説明会<a class="ya4">&rarr;</a>
+    <a class="ya6">&rarr;<a href="{{ url_for('job_guidance_s_5') }}"  class="te">本選考<a class="ya5">&rarr;</a>
+    <br><br>
+    <h1>さぁ！就<span class="ak">勝</span>しよう！</h1><!-- 勝　だけ赤文字 -->
+    
+<br>
+    <input type="button" class="Bbule" onclick="history.back();" value="戻る">
+    </div>
+    <!-- ここまで -->
+    <style>
+        .ak{ color: red;}
+    </style>
+</body>
+</html>

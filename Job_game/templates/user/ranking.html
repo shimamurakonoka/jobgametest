@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>ランキング</title>
+    </head>
+    
+<body class="user">
+    <h1>ミニゲームスコアランキング</h1>
+    <img str="../images/ranking.png">
+    <p><img str="../images/rank1.png"></p>
+    <p><img str="../images/rank2.png"></p>
+    <p><img str="../images/rank3.png"></p>
+    {% for s in score %}
+    <p>{{s.id}}：{{s.score}}</p>     
+    {% endfor %}
+    <input type="button" class="Bbule" onclick="history.back();" value="戻る">
+</body>
+</html>

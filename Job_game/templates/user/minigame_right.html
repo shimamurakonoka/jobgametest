@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>ミニゲーム解説</title>
+    </head>
+    
+<body class="right">
+    <p class="tagu"> {{ user_id }} </p>
+    <input type="hidden" name="id" value="{{id}}">
+    
+    <p>{{ ox }}</p>
+    <p>{{ now_s }}点</p>
+    <img src="{{ new_str }}">
+
+    <form action="{{ url_for('minigame_quiz_page') }}" method="get">
+        <input type="hidden" name="now_s" value="{{now_s}}">
+        <input  class="Bred" type="submit" value="次へ">
+    </form>
+
+
+    <form action="{{ url_for('minigame_ok') }}" method="post">
+        <input  class="Bred" type="submit" value="ゲームを終わる">
+    </form>
+    <!-- <a href="{{ url_for('minigame_ok') }}"  class="Bbule">ゲームを終わる</a> -->
+
+    <style>
+        .Bred{ margin-left: 85%;}
+    </style>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>管理者ログイン</title>
+</head>
+
+<body class="ad">
+    <!-- ここから -->
+    <div style="text-align: center" class="c_whitebox">
+    <form action="{{ url_for('ad_log') }}" method="post">
+    
+    <h1>管理者ログイン</h1>
+    {% if error != "" %}
+    <p class="adlog_error">{{ error }}</p>
+    {% endif %}    
+    
+    <p>アカウント情報を入力してください。</p>
+    
+    <input type="text" class="textbox_adlog" name="id" required placeholder="ID"><br>
+    <input type="password" class="textbox_adlog" name="pw" required placeholder="password"><br>
+
+    <div><input class="Bred" type="submit" value="ログイン"></div>
+        
+    </form>
+    <br><br><br><br>
+    <div><a class="Bbule" href="{{ url_for('u_log_page') }}">戻る</a>
+    </div>
+    </div>
+    <!-- ここまで --> 
+</body>
+
+<style>
+    h1{ text-align: center; margin-bottom: 50px; margin-top: 5%;}
+    p{ text-align: center; margin-bottom: 20px;}
+    .Bred{ margin-right: auto; margin-top: 30px;}
+    .Bbule{ margin-right: 85%;}
+    
+</style>
+
+</html>
+
+

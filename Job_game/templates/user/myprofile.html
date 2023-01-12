@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>プロフィール</title>
+    </head>
+    
+<body class="user">
+    <div class="c_whitebox">
+    
+    <h1 style="text-align: center">MY profile</h1>
+
+    <p>ID: {{ result[0]["id"] }} </p>
+    <p>パスワード: ●●●●●●● </p>
+    <p>スコア: {{ result[0]["score"] }}</p>
+
+    <a class="Bred" href="{{ url_for('profile_edit_page') }}">編集</a>
+    <a class="Bbule" href="{{ url_for('gametop') }}">戻る</a>
+
+    </div>
+
+    <style>
+        h1{ margin-bottom: 50px; margin-top: 5%;}
+        p{margin-bottom: 20px; text-align: left}
+        .Bred{ margin-left: 90%;}
+        .Bbule{ margin-right: 25%;}
+    </style>
+
+</body>
+</html>

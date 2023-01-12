@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>アカウント編集</title>
+    </head>
+    
+<body class="ad">
+    <!-- ここから -->
+    <div class="c_whitebox" style="text-align: center">
+    <form action="{{ url_for('ad_acc_edit_con') }}" method="post">
+    <h1>アカウント編集</h1>
+    <br><br><br><br><br>
+    <p class="mo">こちらのアカウントを編集します。<br>
+    編集内容を入力してください。</p>
+    <table border="1" class="acc">
+        <tr>
+            <th>ID</th>
+            <th>パスワード</th>
+        </tr>
+        <tr>
+            <th>{{ result[0]["id"] }}</th>
+            <th>{{ result[0]["pw"] }}</th>
+        </tr>
+    </table>
+    <br>
+    <input type="text" class="textbox_adlog" name="pw" placeholder="PW">
+    <input type="hidden" name="id" value="{{result[0]["id"]}}"
+    <br>
+    <input class="nana" type="submit" value="編集">
+    </form>
+
+    <input type="button" class="na" onclick="history.back();" value="戻る">
+    </div>
+    <!-- ここまで -->
+
+    <style>
+        h1{ text-align: center; margin-bottom: 50px; margin-top: 5%;}
+        p{ text-align: center; margin-bottom: 20px;}
+        .Bbule{ margin-right: 85%;}
+    </style>
+</body>
+</html>

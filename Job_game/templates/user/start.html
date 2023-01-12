@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>みんなのらくらく就活RPG</title>
+    <script>
+		window.addEventListener('load', function(){
+			
+			// フルスクリーン表示
+			document.getElementById('button1').addEventListener('click', function(){	
+                
+            // Chrome & Firefox v64以降
+			if( document.body.requestFullscreen ) {
+                document.body.requestFullscreen();
+            }
+        })
+    });
+	</script>
+</head>
+    
+<body class="start">
+
+    <a class="u_inquiry" href="{{ url_for('u_inquiry') }}">お問い合わせはコチラ</a>
+
+    <form action="{{ url_for('u_log_page') }}">
+    <div><input type="submit" value="スタート！" id="button1" class="Bred"></div>
+    </form>
+
+    <style>
+        .Bred{
+            margin-left: 43%;
+            margin-top: 43%;
+        }
+        .u_inquiry{
+            margin-left: 85%;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>問題管理</title>
+    </head>
+    
+<body>
+    <!-- ココカラファイン -->
+    <h1>問題管理</h1>
+    <table border="2">
+        <tr>
+        <th>問題ID</th><th>問題</th><th>難易度</th><th>重要度</th><th>ジャンル</th><th>答え</th><th>解説</th><th></th>
+        </tr>
+        {% for res in result %}
+        <tr>
+            <th>{{ res.id }}</th><th>{{ res.quiz_image_id }}</th>
+            <th>{{ res.degree_d }}</th><th>{{res.degree_i}}</th>
+            <th>{{ res.genre }}</th><th>{{ res.answer }}</th><th>{{ res.comment }}</th>
+            <th>
+            <form action ="{{url_for("ad_quiz_del")}}" method="post">
+                <input type="hidden" name="id" value="{{res.id}}">
+                <input type="submit" value="削除">
+            </form></th>
+            <!-- 右側にスクロールバー -->
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+
+    <a href="{{url_for("adtop")}}">戻る</a>
+    
+    </div>
+
+    <!-- ココまで -->
+</body>
+</html>
